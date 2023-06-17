@@ -3,9 +3,10 @@ import MovieCard from "./MovieCard";
 import SearchIcon from "./search.svg";
 import "./App.css";
 
-const PROXY_URL = "https://cors-anywhere-eqd2sk6re-ahmedhaddabi.vercel.app";
+const PROXY_URL = "https://silver-screen-nine.vercel.app/";
 const API_KEY = process.env.API_KEY;
-const API_URL = `${PROXY_URL}/https://www.omdbapi.com?apikey=${API_KEY}`;
+const API_URL = '/api?apikey=' + process.env.API_KEY;
+
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
