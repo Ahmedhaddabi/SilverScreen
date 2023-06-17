@@ -19,6 +19,8 @@ const App = () => {
     const data = await response.json();
 
     setMovies(data.Search);
+
+    
   };
 
   return (
