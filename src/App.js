@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-
 import MovieCard from "./MovieCard";
 import SearchIcon from "./search.svg";
 import "./App.css";
 
-const API_URL = "http://www.omdbapi.com?apikey=e90b40b4";
+const API_URL = `https://silver-screen-nine.vercel.app/api/?apikey=${process.env.API_KEY}`;
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,8 +18,6 @@ const App = () => {
     const data = await response.json();
 
     setMovies(data.Search);
-
-    
   };
 
   return (
@@ -43,7 +40,7 @@ const App = () => {
       {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie) => (
-            <MovieCard movie={movie} />
+            <MovieCard movie={movie} key={movie.imdbID} />
           ))}
         </div>
       ) : (
