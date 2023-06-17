@@ -1,5 +1,5 @@
 {
-  "name": "Ahmed-app",
+  "name": "react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,7 +19,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "Ahmed-app",
+      "react-app",
       "react-app/jest"
     ]
   },
