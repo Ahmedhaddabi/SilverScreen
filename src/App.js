@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
+
 import MovieCard from "./MovieCard";
 import SearchIcon from "./search.svg";
 import "./App.css";
 
-const PROXY_URL = "https://silver-screen-nine.vercel.app";
-const API_KEY = process.env.API_KEY;
-const API_URL = `${PROXY_URL}/api?apikey=${API_KEY}`;
+const API_URL = "http://www.omdbapi.com?apikey=e90b40b4";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -42,7 +41,7 @@ const App = () => {
       {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie) => (
-            <MovieCard movie={movie} key={movie.imdbID} />
+            <MovieCard movie={movie} />
           ))}
         </div>
       ) : (
